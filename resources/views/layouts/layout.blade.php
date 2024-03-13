@@ -16,7 +16,10 @@
 <body>
     @include('components.header')
     @include('components.jumbotron')
+    @yield('main')
     @include('components.footer')
+    @include('components.socials')
+
 
 </body>
 

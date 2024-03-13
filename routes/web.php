@@ -15,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $navbar_voices = ['characters', 'comics', 'movies', 'tv', 'games', 'collectables', 'videos', 'fans', 'news', 'shop'];
-    return view('home', compact('navbar_voices'))->with('active_page', 'comics');
+    $comics_db = config('comics');
+    $icons  = [
+        ['name' => 'digital comics', 'path' => 'resources/img/buy-comics-digital-comics.png'],
+        ['name' => 'dc merchandise', 'path' => 'resources/img/buy-comics-merchandise.png'],
+        ['name' => 'subscription', 'path' => 'resources/img/buy-comics-subscriptions.png'],
+        ['name' => 'comic shop locator', 'path' => 'resources/img/buy-comics-shop-locator.png'],
+        ['name' => 'dc power visa', 'path' => 'resources/img/buy-dc-power-visa.svg']
+    ];
+    return view('home', compact('navbar_voices', 'comics_db', 'icons'))->with('active_page', 'comics');
 })->name('comics');
