@@ -25,3 +25,9 @@ Route::get('/', function () {
     ];
     return view('home', compact('navbar_voices', 'comics_db', 'icons'))->with('active_page', 'comics');
 })->name('comics');
+
+Route::get('/details', function () {
+    $navbar_voices = ['characters', 'comics', 'movies', 'tv', 'games', 'collectables', 'videos', 'fans', 'news', 'shop'];
+    $comics_db = config('comics');
+    return view('home', compact('navbar_voices', 'comics_db'))->with('active_page', 'details');
+})->name('details');

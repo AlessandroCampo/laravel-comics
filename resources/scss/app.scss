@@ -38,3 +38,27 @@ main {
     width: 100%;
     background-color: #1c1c1c;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+    /* width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* color of the scrollbar handle on hover */
+}

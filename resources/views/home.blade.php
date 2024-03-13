@@ -7,7 +7,10 @@
                 current series
             </div>
             <div class="label bottom-middle">
-                load more
+                <a href="/details">
+                    load more
+                </a>
+
             </div>
             @foreach ($comics_db as $item)
                 <div class="card">
