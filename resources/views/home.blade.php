@@ -12,16 +12,16 @@
                 </a>
 
             </div>
-            @foreach ($comics_db as $item)
-                <div class="card">
+            @foreach ($comics_db as $index => $item)
+                <a href="{{ route('details.show', ['index' => $index]) }}" class="card">
                     <div class="img" style="background-image: url('{{ $item['thumb'] }}');">
                     </div>
-
                     <div>
                         {{ $item['title'] }}
                     </div>
-                </div>
+                </a>
             @endforeach
+
         </div>
         <section class="icons">
             <div class="icons-container">
@@ -56,6 +56,8 @@
         left: 0%;
     }
 
+
+
     div.label.bottom-middle {
         font-size: 0.8em;
         transform: translateX(-50%);
@@ -88,6 +90,8 @@
         display: flex;
         flex-direction: column;
         gap: 1.2em;
+        text-decoration: none;
+        color: white;
     }
 
     .img {

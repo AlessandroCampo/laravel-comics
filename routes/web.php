@@ -26,8 +26,10 @@ Route::get('/', function () {
     return view('home', compact('navbar_voices', 'comics_db', 'icons'))->with('active_page', 'comics');
 })->name('comics');
 
-Route::get('/details', function () {
+Route::get('/details{index}', function ($index) {
     $navbar_voices = ['characters', 'comics', 'movies', 'tv', 'games', 'collectables', 'videos', 'fans', 'news', 'shop'];
     $comics_db = config('comics');
-    return view('home', compact('navbar_voices', 'comics_db'))->with('active_page', 'details');
-})->name('details');
+    $cardDetails = $comics_db[$index];
+
+    return view('details', compact('navbar_voices', 'comics_db', 'cardDetails'))->with('active_page', 'details');
+})->name('details.show');
